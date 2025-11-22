@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  /* background-color: rgb(212, 212, 212, 0.8); */
+  background-color: rgb(212, 212, 212, 0.8);
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-light);
 }
@@ -110,15 +110,25 @@ body {
 }
 
 .hero .content .hero-content p {
+  text-align: justify;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: var(--text-color-light);
 }
 
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: rgb(212, 212, 212, 0.8);
+  border-top: 1px solid var(--text-color-light);
+  color: var(--text-color-light);
+  margin-top: 20.2rem;
+}
+
 /* Media Queries */
 
 /* Laptop */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   html {
     font-size: 75%;
   }
@@ -165,9 +175,12 @@ body {
   }
 
   /* Mobile Phone */
-  @media (max-width: 480px) {
+  @media (max-width: 450px) {
     html {
       font-size: 55%;
+    }
+    .footer {
+      margin-top: 153.5rem;
     }
   }
 }
