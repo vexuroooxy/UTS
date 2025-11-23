@@ -25,6 +25,8 @@ body {
 }
 
 /* Header Section */
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -33,10 +35,6 @@ body {
   background-color: rgb(212, 212, 212, 0.8);
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-light);
-}
-
-.navbar .sitename .shop-text {
-  color: #007bff;
 }
 
 .navbar .navbar-nav a {
@@ -74,12 +72,17 @@ body {
   color: #007bff;
 }
 
-.sitename {
+.navbar .sitename .shop-text {
+  color: #007bff;
+}
+
+.navbar .sitename {
   font-size: 1.5rem;
   font-weight: bold;
   font-style: italic;
 }
 
+/* Hamburger Menu */
 #hamburger-menu {
   display: none;
 }
@@ -88,6 +91,7 @@ body {
 
 /* Home Main */
 .hero {
+  margin-top: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,9 +101,14 @@ body {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
   max-width: 50%;
+  border-radius: 1rem;
   object-fit: contain;
+  transition: 0.35s ease;
+}
+
+.hero .content .hero-image img:hover {
+  transform: scale(1.05);
 }
 
 .hero .content .hero-content {
@@ -114,6 +123,8 @@ body {
 }
 
 .hero .content .hero-content p {
+  margin-left: 2rem;
+  margin-right: 2rem;
   text-align: justify;
   font-size: 1.2rem;
   margin-bottom: 2rem;
@@ -130,21 +141,8 @@ body {
   color: #007bff;
 }
 
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 0.5rem 7%;
-}
-
-.gallery-card .image-gallery {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .gallery-card {
   padding-top: 1rem;
-  border-radius: 0.6rem;
   transition: 0.35s ease;
 }
 
@@ -157,6 +155,18 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
   border-radius: 0.6rem;
+}
+
+.gallery-card .image-gallery {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0.5rem 7%;
 }
 
 /* Footer Section */
@@ -225,14 +235,22 @@ body {
   .image-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  /* Mobile Phone */
-  @media (max-width: 450px) {
-    html {
-      font-size: 55%;
-    }
-    /* .footer {
-      margin-top: 153.5rem;
-    } */
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Footer Section */
+  .footer {
+    margin-top: 82rem;
   }
 }
