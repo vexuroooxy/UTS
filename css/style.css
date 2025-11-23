@@ -35,7 +35,7 @@ body {
   color: var(--text-color-light);
 }
 
-.navbar span {
+.navbar .sitename .shop-text {
   color: #007bff;
 }
 
@@ -55,7 +55,7 @@ body {
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.1rem;
   border-bottom: 0.1rem solid #007bff;
   transform: scaleX(0);
 }
@@ -85,8 +85,12 @@ body {
 }
 
 /* Main Section */
+
+/* Home Main */
 .hero {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero .content .hero-image img {
@@ -116,6 +120,46 @@ body {
   color: var(--text-color-light);
 }
 
+/* Gallery Main */
+
+.hero .content .hero-content {
+  padding-bottom: 1rem;
+}
+
+.hero .content .hero-content .shop-text {
+  color: #007bff;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0.5rem 7%;
+}
+
+.gallery-card .image-gallery {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-card {
+  padding-top: 1rem;
+  border-radius: 0.6rem;
+  transition: 0.35s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.18);
+}
+
+.gallery-card {
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  border-radius: 0.6rem;
+}
+
+/* Footer Section */
 .footer {
   text-align: center;
   padding: 1rem 0;
@@ -123,6 +167,10 @@ body {
   border-top: 1px solid var(--text-color-light);
   color: var(--text-color-light);
   margin-top: 20.2rem;
+}
+
+.footer .shop-text {
+  color: #007bff;
 }
 
 /* Media Queries */
@@ -139,7 +187,7 @@ body {
   html {
     font-size: 62.5%;
   }
-
+  /* Navbar Section */
   #hamburger-menu {
     display: inline-block;
   }
@@ -174,13 +222,17 @@ body {
     transform: scaleX(0.2);
   }
 
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* Mobile Phone */
   @media (max-width: 450px) {
     html {
       font-size: 55%;
     }
-    .footer {
+    /* .footer {
       margin-top: 153.5rem;
-    }
+    } */
   }
 }
