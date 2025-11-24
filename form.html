@@ -54,7 +54,7 @@
         <div class="form-container">
           <form action="#" method="post" class="contact-form">
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required /><br><br>
+            <input type="text" id="name" name="name" required placeholder="" /><br><br>
 
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required /><br><br>
@@ -94,11 +94,19 @@
         <i style="font-weight: 500">vexuro<span class="shop-text">shop</span></i
         >. All rights reserved.
       </p>
-    </footer>
+      <div class="button">
+        <button id="theme-switch">
+          <i data-feather="sun" class="icon-light"></i>
+          <i data-feather="moon" class="icon-dark"></i>
+        </button>
+      </div>
     <!-- Footer End -->
+
+    <!-- Feather Icons -->
     <script>
       feather.replace();
     </script>
+
     <!-- Script File -->
     <script src="js/script.js"></script>
   </body>

@@ -8,20 +8,30 @@
   text-decoration: none;
 }
 
-/* Font */
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
 /* Coloring */
 :root {
-  /* Light Theme */
-  --bg-color-light: #fff;
-  --text-color-light: #333;
+  --base-color: #fff;
+  --text-color: #333;
+  --secondary-bg: #d4d4d4;
+  --accent-color: #007bff;
+  --table-bg: #f9f9f9;
+  --table-nth-bg: rgba(0, 0, 0, 0.1);
+}
 
-  /* Dark Theme */
-  --bg-color-dark: #000;
-  --text-color-dark: #d4d4d4;
+.darkmode {
+  --base-color: #0f0f0f;
+  --text-color: #fff;
+  --secondary-bg: #252525;
+  --accent-color: #007bff;
+  --table-bg: #272727;
+  --table-nth-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Body Section */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 /* Header Section */
@@ -32,14 +42,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: rgb(212, 212, 212, 0.8);
-  border-bottom: 1px solid var(--text-color-light);
-  color: var(--text-color-light);
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
 }
 
 .navbar .navbar-nav a {
   display: inline-block;
-  color: var(--text-color-light);
+  color: var(--text-color);
   transition: color 0.3s;
   font-weight: 500;
   font-size: 1.1rem;
@@ -47,14 +57,14 @@ body {
 }
 
 .navbar .navbar-nav a:hover {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
   padding-bottom: 0.1rem;
-  border-bottom: 0.1rem solid #007bff;
+  border-bottom: 0.1rem solid var(--accent-color);
   transform: scaleX(0);
 }
 
@@ -64,16 +74,17 @@ body {
 }
 
 .navbar .navbar-extra a {
-  color: var(--text-color-light);
+  color: var(--text-color);
   font-size: 1.2rem;
   transition: color 0.3s;
 }
+
 .navbar .navbar-extra a:hover {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .navbar .sitename .shop-text {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .navbar .sitename {
@@ -82,9 +93,40 @@ body {
   font-style: italic;
 }
 
+.button #theme-switch {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button #theme-switch:hover {
+  transform: scale(1.1);
+}
+
 /* Hamburger Menu */
 #hamburger-menu {
   display: none;
+}
+
+/* Theme Switch */
+#theme-switch {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 /* Main Section */
@@ -119,7 +161,7 @@ body {
 .hero .content .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 .hero .content .hero-content p {
@@ -128,7 +170,7 @@ body {
   text-align: justify;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 /* Gallery Main */
@@ -138,7 +180,7 @@ body {
 }
 
 .hero .content .hero-content .shop-text {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 .gallery-card {
@@ -153,7 +195,7 @@ body {
 .gallery-card {
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: var(--text-color-dark);
+  background-color: var(--secondary-bg);
   border-radius: 0.6rem;
 }
 
@@ -179,12 +221,12 @@ body {
   padding: 1.7rem 0;
   margin: 0 auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: var(--text-color-dark);
+  background-color: var(--secondary-bg);
   border-radius: 0.6rem;
 }
 .hero .content .form-container .contact-form label {
   font-weight: 600;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 .hero .content .form-container .contact-form input,
@@ -198,7 +240,7 @@ textarea {
 
 .hero .content .form-container .contact-form button {
   padding: 0.8rem;
-  background-color: #007bff;
+  background-color: var(--accent-color);
   color: #fff;
   border-radius: 0.4rem;
   font-size: 1.1rem;
@@ -214,19 +256,21 @@ textarea {
 
 .table-container {
   padding: 2rem 7%;
-  overflow-x: overflow;
 }
 
 .table-container .data-table {
-  background-color: var(--bg-color-light);
+  background-color: var(--table-bg);
   width: 100%;
   border-collapse: collapse;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .table-container .data-table thead tr {
-  background-color: #007bff;
   color: #fff;
+}
+
+.table-container .data-table th {
+  background-color: var(--accent-color);
 }
 
 .table-container .data-table th,
@@ -249,16 +293,19 @@ textarea {
 
 /* Footer Section */
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding: 1rem 0;
-  background-color: rgb(212, 212, 212, 0.8);
-  border-top: 1px solid var(--text-color-light);
-  color: var(--text-color-light);
+  padding: 1rem 7%;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--text-color);
+  color: var(--text-color);
   margin-top: 20.2rem;
 }
 
 .footer .shop-text {
-  color: #007bff;
+  color: var(--accent-color);
 }
 
 /* Media Queries */
@@ -284,7 +331,7 @@ textarea {
     position: absolute;
     top: 0.01%;
     right: -100%;
-    background-color: var(--text-color-light);
+    background-color: var(--text-color);
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
@@ -295,7 +342,7 @@ textarea {
   }
 
   .navbar .navbar-nav a {
-    color: var(--bg-color-light);
+    color: var(--base-color);
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
@@ -314,13 +361,6 @@ textarea {
   .image-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  /* Footer Section */
-
-  /* Home Footer */
-  .home-page .footer {
-    margin-top: 53.9rem;
-  }
 }
 
 /* Mobile Phone */
@@ -329,6 +369,9 @@ textarea {
     font-size: 55%;
   }
 
+  /* Main Section */
+
+  /* Gallery Main */
   .image-gallery {
     grid-template-columns: 1fr;
     width: 75%;
@@ -337,10 +380,15 @@ textarea {
     gap: 2.5rem;
   }
 
-  /* Footer Section */
+  /* Table Main */
+  .table-container .data-table {
+    display: block;
+    width: 100%;
+    overflow: scroll;
+  }
 
-  /* Home Footer */
-  .home-page .footer {
-    margin-top: 38.8rem;
+  /* Footer Section */
+  .footer {
+    margin-top: 34.5rem;
   }
 }
