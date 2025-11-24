@@ -52,18 +52,18 @@
           </p>
         </div>
         <div class="form-container">
-          <form action="#" method="post" class="contact-form">
+          <form action="#" method="post" id="dataForm" class="contact-form">
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required placeholder="" /><br><br>
+            <input type="text" id="name" name="name" placeholder="example" /><br><br>
 
             <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required /><br><br>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com"/><br><br>
             
             <label for="number">Number Phone:</label><br>
-            <input type="number" id="no-hp" name="no-hp" required /><br><br>
+            <input type="number" id="no-hp" name="no-hp" placeholder="1234567890"/><br><br>
 
             <label for="keyboard">Choose a Keyboard:</label><br>
-            <select id="keyboard" name="keyboard" required>
+            <select id="keyboard" name="keyboard">
               <option value="">--Please choose an option--</option>
               <option value="razer-huntsman-v3-pro-mini">
                 Razer Huntsman V3 Pro Mini
@@ -79,7 +79,7 @@
               <option value="corsairk65-rgb-mini">Corsair K65 RGB Mini</option>
             </select><br><br>
             <label for="address">Adress:</label><br>
-            <textarea id="address" name="address" rows="4" required></textarea><br><br>
+            <textarea id="address" name="address" rows="4" placeholder="ex Gatsu Subroto Street"></textarea><br><br>
 
             <button type="submit">Submit</button>
           </form>

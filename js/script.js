@@ -40,3 +40,39 @@ themeSwitch.addEventListener("click", function () {
 });
 
 // Form Validation
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("dataForm");
+
+  form.addEventListener("submit", function (event) {
+    // Cegah submit form default
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("no-hp").value.trim();
+    const keyboard = document.getElementById("keyboard").value;
+    const address = document.getElementById("address").value.trim();
+
+    // Validasi sederhana
+    if (
+      name === "" ||
+      email === "" ||
+      phone === "" ||
+      keyboard === "" ||
+      address === ""
+    ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Validasi format email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Jika validasi berhasil
+    alert("Form submitted successfully!");
+    form.reset(); // Reset form setelah submit
+  });
+});
