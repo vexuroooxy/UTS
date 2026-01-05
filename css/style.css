@@ -32,8 +32,6 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--base-color);
   color: var(--text-color);
-  overflow-x: hidden;
-  width: 100%;
 }
 
 /* Header Section */
@@ -323,6 +321,8 @@ textarea {
 @media (max-width: 768px) {
   html {
     font-size: 62.5%;
+    overflow-x: hidden;
+    width: 100%;
   }
   /* Navbar Section */
   #hamburger-menu {
