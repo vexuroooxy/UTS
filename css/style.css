@@ -32,6 +32,8 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--base-color);
   color: var(--text-color);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Header Section */
@@ -378,6 +380,10 @@ textarea {
     margin-left: auto;
     margin-right: auto;
     gap: 2.5rem;
+  }
+
+  .hero .content .form-container {
+    max-width: 90%;
   }
 
   /* Table Main */
